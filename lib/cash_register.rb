@@ -12,10 +12,10 @@ class CashRegister
     transaction = [title, price, quantity]
     
     if quantity != nil
-      @item_hash.nil? ? @item_hash = [title] * quantity : @item_list += [title] * quantity
+      @item_array.nil? ? @item_array = [title] * quantity : @item_array += [title] * quantity
       @total += @price * quantity.to_f
     else
-      @item_list.nil? ? @item_list = [title] : @item_list << [title]
+      @item_array.nil? ? @item_array = [title] : @item_array << [title]
       @total += @price
     end
   end
@@ -30,7 +30,7 @@ class CashRegister
   end
   
   def items
-    @item_list
+    @item_array
   end
   
   def void_last_transaction
