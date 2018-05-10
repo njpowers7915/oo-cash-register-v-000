@@ -9,8 +9,6 @@ class CashRegister
   end
   
   def add_item(title, price, quantity = nil)
-    transaction = [title, price, quantity]
-    
     if quantity != nil
       @item_array.nil? ? @item_array = [title] * quantity : @item_array += [title] * quantity
       @total += @price * quantity.to_f
