@@ -2,6 +2,7 @@ class CashRegister
   attr_accessor :total
   attr_reader :discount
   @item_array = []
+  @price_array = []
   
   def initialize(discount = nil)
     @total = 0
@@ -11,7 +12,8 @@ class CashRegister
   def add_item(title, price, quantity = nil)
     if quantity != nil
       @item_array.nil? ? @item_array = [title] * quantity : @item_array += [title] * quantity
-      @total += price * quantity.to_f
+      transaction_price = price * quantity.to_f
+      @total += transaction_price
     else
       @item_array.nil? ? @item_array = [title] : @item_array << [title]
       @total += price
