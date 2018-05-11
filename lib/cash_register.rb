@@ -36,7 +36,7 @@ class CashRegister
   end
   
   def void_last_transaction
-    @total -= @price_array[-1]
+    @total -= @price_array[-1].to_f
   end
 end
   
