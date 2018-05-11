@@ -14,7 +14,7 @@ class CashRegister
       @item_array.nil? ? @item_array = [title] * quantity : @item_array += [title] * quantity
       transaction_price = price * quantity.to_f
       @total += transaction_price
-      @price_array << transaction_price
+      @price_array << [transaction_price]
     else
       @item_array.nil? ? @item_array = [title] : @item_array << [title]
       @total += price
