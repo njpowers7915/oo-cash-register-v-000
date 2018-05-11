@@ -18,7 +18,7 @@ class CashRegister
     else
       @item_array.nil? ? @item_array = [title] : @item_array << [title]
       @total += price
-      @price_array << price
+      @price_array << [price]
     end
   end
   
